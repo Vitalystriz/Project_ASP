@@ -1,0 +1,6 @@
+# ninja log v6
+23	181	7990792521882724	tests/CMakeFiles/runTests.dir/__/src/math.cpp.obj	70239e8974eedaea
+17	2352	7990792521834330	tests/CMakeFiles/runTests.dir/test_main.cpp.obj	a23961ed180c49ac
+10	8834	7990792521756563	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	399ce982fe73c3f8
+8836	9497	7990792610010469	lib/libgtest.a	6a3174c6cdce0abc
+9497	9884	7990792616620521	tests/runTests.exe	3f8ee35b1c000811
