@@ -13,19 +13,6 @@ Call Stack (most recent call first):
   tests/CMakeLists.txt:9 (FetchContent_Declare)
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
--- Configuring done (1.2s)
-CMake Error at tests/CMakeLists.txt:17 (add_executable):
-  Cannot find source file:
-
-    DataManager.cpp
-
-  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm
-  .ccm .cxxm .c++m .h .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90
-  .f95 .f03 .hip .ispc
-
-
-CMake Error at tests/CMakeLists.txt:17 (add_executable):
-  No SOURCES given to target: runTests
-
-
-CMake Generate step failed.  Build files cannot be regenerated correctly.
+-- Configuring done (4.7s)
+-- Generating done (0.1s)
+-- Build files have been written to: C:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/cmake-build-debug
