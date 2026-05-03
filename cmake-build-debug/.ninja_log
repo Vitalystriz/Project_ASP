@@ -24,3 +24,5 @@
 1556	2560	7995465495542973	tests/CMakeFiles/runTests.dir/__/src/menu/ConsoleMenu.cpp.obj	8f59108a8f47d3c2
 1965	2634	7995465499638687	tests/CMakeFiles/runTests.dir/__/src/command/AddCommand.cpp.obj	a5e5b23fb5ba77f5
 2052	2687	7995465500510354	tests/CMakeFiles/runTests.dir/__/src/command/RecommendCommand.cpp.obj	12335f57248b7e50
+17	462	7995469472914510	tests/CMakeFiles/runTests.dir/__/src/run/main.cpp.obj	3c807b27bfc79124
+21	1151	7995469472959432	tests/CMakeFiles/runTests.dir/test_Initialization.cpp.obj	e8d7f73cb39c23d1
