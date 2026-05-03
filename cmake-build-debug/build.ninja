@@ -324,12 +324,19 @@ build tests/CMakeFiles/runTests.dir/test_getArgs.cpp.obj: CXX_COMPILER__runTests
   OBJECT_DIR = tests\CMakeFiles\runTests.dir
   OBJECT_FILE_DIR = tests\CMakeFiles\runTests.dir
 
-build tests/CMakeFiles/runTests.dir/__/src/run/main.cpp.obj: CXX_COMPILER__runTests_unscanned_Debug C$:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/src/run/main.cpp || cmake_object_order_depends_target_runTests
-  DEP_FILE = tests\CMakeFiles\runTests.dir\__\src\run\main.cpp.obj.d
+build tests/CMakeFiles/runTests.dir/test_Initialization.cpp.obj: CXX_COMPILER__runTests_unscanned_Debug C$:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/tests/test_Initialization.cpp || cmake_object_order_depends_target_runTests
+  DEP_FILE = tests\CMakeFiles\runTests.dir\test_Initialization.cpp.obj.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
   INCLUDES = -IC:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/tests/../src -isystem C:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = tests\CMakeFiles\runTests.dir
-  OBJECT_FILE_DIR = tests\CMakeFiles\runTests.dir\__\src\run
+  OBJECT_FILE_DIR = tests\CMakeFiles\runTests.dir
+
+build tests/CMakeFiles/runTests.dir/test_helpCommand.cpp.obj: CXX_COMPILER__runTests_unscanned_Debug C$:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/tests/test_helpCommand.cpp || cmake_object_order_depends_target_runTests
+  DEP_FILE = tests\CMakeFiles\runTests.dir\test_helpCommand.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/tests/../src -isystem C:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = tests\CMakeFiles\runTests.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\runTests.dir
 
 build tests/CMakeFiles/runTests.dir/__/src/run/Initialization.cpp.obj: CXX_COMPILER__runTests_unscanned_Debug C$:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/src/run/Initialization.cpp || cmake_object_order_depends_target_runTests
   DEP_FILE = tests\CMakeFiles\runTests.dir\__\src\run\Initialization.cpp.obj.d
@@ -387,20 +394,6 @@ build tests/CMakeFiles/runTests.dir/__/src/DataManager.cpp.obj: CXX_COMPILER__ru
   OBJECT_DIR = tests\CMakeFiles\runTests.dir
   OBJECT_FILE_DIR = tests\CMakeFiles\runTests.dir\__\src
 
-build tests/CMakeFiles/runTests.dir/test_Initialization.cpp.obj: CXX_COMPILER__runTests_unscanned_Debug C$:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/tests/test_Initialization.cpp || cmake_object_order_depends_target_runTests
-  DEP_FILE = tests\CMakeFiles\runTests.dir\test_Initialization.cpp.obj.d
-  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -IC:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/tests/../src -isystem C:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/cmake-build-debug/_deps/googletest-src/googletest
-  OBJECT_DIR = tests\CMakeFiles\runTests.dir
-  OBJECT_FILE_DIR = tests\CMakeFiles\runTests.dir
-
-build tests/CMakeFiles/runTests.dir/test_helpCommand.cpp.obj: CXX_COMPILER__runTests_unscanned_Debug C$:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/tests/test_helpCommand.cpp || cmake_object_order_depends_target_runTests
-  DEP_FILE = tests\CMakeFiles\runTests.dir\test_helpCommand.cpp.obj.d
-  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -IC:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/tests/../src -isystem C:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/cmake-build-debug/_deps/googletest-src/googletest
-  OBJECT_DIR = tests\CMakeFiles\runTests.dir
-  OBJECT_FILE_DIR = tests\CMakeFiles\runTests.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target runTests
@@ -409,7 +402,7 @@ build tests/CMakeFiles/runTests.dir/test_helpCommand.cpp.obj: CXX_COMPILER__runT
 #############################################
 # Link the executable tests\runTests.exe
 
-build tests/runTests.exe: CXX_EXECUTABLE_LINKER__runTests_Debug tests/CMakeFiles/runTests.dir/test_main.cpp.obj tests/CMakeFiles/runTests.dir/test_nextCommand.cpp.obj tests/CMakeFiles/runTests.dir/test_getArgs.cpp.obj tests/CMakeFiles/runTests.dir/__/src/run/main.cpp.obj tests/CMakeFiles/runTests.dir/__/src/run/Initialization.cpp.obj tests/CMakeFiles/runTests.dir/__/src/run/App.cpp.obj tests/CMakeFiles/runTests.dir/__/src/menu/ConsoleMenu.cpp.obj tests/CMakeFiles/runTests.dir/__/src/command/DisplayErrorClass.cpp.obj tests/CMakeFiles/runTests.dir/__/src/command/HelpCommand.cpp.obj tests/CMakeFiles/runTests.dir/__/src/command/AddCommand.cpp.obj tests/CMakeFiles/runTests.dir/__/src/command/RecommendCommand.cpp.obj tests/CMakeFiles/runTests.dir/__/src/DataManager.cpp.obj tests/CMakeFiles/runTests.dir/test_Initialization.cpp.obj tests/CMakeFiles/runTests.dir/test_helpCommand.cpp.obj | lib/libgtest.a || lib/libgtest.a
+build tests/runTests.exe: CXX_EXECUTABLE_LINKER__runTests_Debug tests/CMakeFiles/runTests.dir/test_main.cpp.obj tests/CMakeFiles/runTests.dir/test_nextCommand.cpp.obj tests/CMakeFiles/runTests.dir/test_getArgs.cpp.obj tests/CMakeFiles/runTests.dir/test_Initialization.cpp.obj tests/CMakeFiles/runTests.dir/test_helpCommand.cpp.obj tests/CMakeFiles/runTests.dir/__/src/run/Initialization.cpp.obj tests/CMakeFiles/runTests.dir/__/src/run/App.cpp.obj tests/CMakeFiles/runTests.dir/__/src/menu/ConsoleMenu.cpp.obj tests/CMakeFiles/runTests.dir/__/src/command/DisplayErrorClass.cpp.obj tests/CMakeFiles/runTests.dir/__/src/command/HelpCommand.cpp.obj tests/CMakeFiles/runTests.dir/__/src/command/AddCommand.cpp.obj tests/CMakeFiles/runTests.dir/__/src/command/RecommendCommand.cpp.obj tests/CMakeFiles/runTests.dir/__/src/DataManager.cpp.obj | lib/libgtest.a || lib/libgtest.a
   FLAGS = -g
   LINK_LIBRARIES = lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = tests\CMakeFiles\runTests.dir

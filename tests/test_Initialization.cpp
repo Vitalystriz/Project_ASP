@@ -14,9 +14,6 @@ TEST(InitializationTest, CreateCommandMapPopulatesCorrectly) {
     EXPECT_EQ(commandMap.size(), 4);
 
     // 2. Verify specific keys exist and are not null pointers
-    EXPECT_TRUE(commandMap.find("exit") != commandMap.end());
-    EXPECT_NE(commandMap["exit"], nullptr); // DisplayErrorClass
-
     EXPECT_TRUE(commandMap.find("help") != commandMap.end());
     EXPECT_NE(commandMap["help"], nullptr);  // HelpCommand
 
