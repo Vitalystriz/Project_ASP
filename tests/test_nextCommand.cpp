@@ -1,0 +1,78 @@
+//
+// Created by geras on 02.05.2026.
+//
+
+#include "ConsoleMenu.h"
+#include <gtest/gtest.h>
+#include <sstream>
+
+// Helper function to simulate input
+// Better approach:
+void setInput(const std::string& input) {
+    static std::istringstream inputStream; // Allocated once, safely reused
+    inputStream.str(input);
+    inputStream.clear();
+    std::cin.rdbuf(inputStream.rdbuf());
+}
+
+TEST(ConsoleMenuTest, ExitCommand) {
+    setInput("exit\n");
+    ConsoleMenu menu;
+    EXPECT_EQ(menu.nextCommand(), 0);
+}
+
+TEST(ConsoleMenuTest, EmptyInput) {
+    setInput("\n");
+    ConsoleMenu menu;
+    EXPECT_EQ(menu.nextCommand(), -1);
+}
+
+TEST(ConsoleMenuTest, HelpCommand) {
+    setInput("help\n");
+    ConsoleMenu menu;
+    EXPECT_EQ(menu.nextCommand(), 1);
+}
+
+TEST(ConsoleMenuTest, AddCommandWithValidArgs) {
+    setInput("add 1 2 3 4\n");
+    ConsoleMenu menu;
+    EXPECT_EQ(menu.nextCommand(), 2);
+
+    auto args = menu.getArgs();
+    ASSERT_EQ(args.size(), 1);
+    EXPECT_EQ(args[1], std::vector<int>({2, 3, 4}));
+}
+
+TEST(ConsoleMenuTest, AddCommandWithNoArgs) {
+    setInput("add\n");
+    ConsoleMenu menu;
+    EXPECT_EQ(menu.nextCommand(), 2);
+
+    auto args = menu.getArgs();
+    EXPECT_TRUE(args.empty());
+}
+
+TEST(ConsoleMenuTest, RecommendCommandWithValidArgs) {
+    setInput("recommend 1 2\n");
+    ConsoleMenu menu;
+    EXPECT_EQ(menu.nextCommand(), 3);
+
+    auto args = menu.getArgs();
+    ASSERT_EQ(args.size(), 1);
+    EXPECT_EQ(args[1], std::vector<int>({2}));
+}
+
+TEST(ConsoleMenuTest, RecommendCommandWithNoArgs) {
+    setInput("recommend\n");
+    ConsoleMenu menu;
+    EXPECT_EQ(menu.nextCommand(), 3);
+
+    auto args = menu.getArgs();
+    EXPECT_TRUE(args.empty());
+}
+
+TEST(ConsoleMenuTest, InvalidCommand) {
+    setInput("invalid_command\n");
+    ConsoleMenu menu;
+    EXPECT_EQ(menu.nextCommand(), -1);
+}
