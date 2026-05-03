@@ -2,65 +2,80 @@
 // Created by vitaly on 28.04.2026.
 //
 
+
 #include <sstream>
 #include <iostream>
 #include <map>
+#include <vector>
 #include "IMenu.h"
-class ConsoleMenu: public IMenu {
-private:
-    std::map<int, int> mapArgs;
-public:
-    ConsoleMenu() {
+#include "HelpCommand.h"
+#include "ConsoleMenu.h"
+
+    ConsoleMenu::ConsoleMenu() {
+        this->mapArgs = std::map<int, std::vector<int>>();
         printMenu();
     }
 
-    void printMenu() {
-        std::cout << "--- Recommendation System CLI ---" << std::endl;
-        std::cout << "Available commands:" << std::endl;
-        std::cout << "- help" << std::endl;
-        std::cout << "- add <userId> <productId1> <productId2> ..." << std::endl;
-        std::cout << "- recommend <userId> <productId>" << std::endl;
-        std::cout << "- exit" << std::endl;
-        std::cout << "---------------------------------" << std::endl;
+    void ConsoleMenu::printMenu() {
+        HelpCommand help;
+        help.execute();
     }
 
-    int nextCommand() { // -> int command
+int ConsoleMenu::nextCommand() { // -> int command
         std::string line;
-        std::cin >> line;
 
+        // 1. Read the entire line from the user at once
         if(!std::getline(std::cin, line) || line == "exit") {
             return 0;
         }
 
+        if (line.empty()) {
+            return -1;
+        }
+
         std::stringstream ss(line);
         std::string command;
+
         ss >> command;
 
         if (command == "help") return 1;
 
         if (command == "add") {
-            int uId, pId;
-            ss >> uId;
-            while(ss>>pId) {
+            int uId;
+            std::vector<int> pId;
+            if (ss >> uId) {
+                int temp_pId; // Temporary variable to hold the parsed ID
+                while(ss >> temp_pId) {
+                    pId.push_back(temp_pId); // Safely append to the vector
+                }
                 mapArgs[uId] = pId;
             }
             return 2;
         }
 
         if (command == "recommend") {
-            int uId, pId;
-            if (ss >> uId && ss>> pId) mapArgs[uId] = pId; // map{targetUId: targetPId}
+            int uId;
+            int temp_pId; // Temporary variable
+            std::vector<int> pId;
+            if (ss >> uId && ss >> temp_pId) {
+                pId.push_back(temp_pId); // Safely append to the vector
+                mapArgs[uId] = pId; // map{targetUId: targetPId}
+            }
             return 3;
         }
+
         return -1;
     }
 
-    void displayError() {
+    void ConsoleMenu::displayError() {
         std::cout << "Sorry, an error occurred" << std::endl;
         std::cout << "Please, try enter your command one more time" << std::endl;
     }
 
-    std::map<int, int> getArgs() {
+    void ConsoleMenu::exitMessage() {
+        std::cout << "Goodbye" << std::endl;
+    }
+
+    std::map<int, std::vector<int> > ConsoleMenu::getArgs() {
         return mapArgs;
     }
-};

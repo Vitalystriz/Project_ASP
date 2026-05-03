@@ -29,7 +29,11 @@
 					},
 					"parentIndex" : 0,
 					"projectIndex" : 0,
-					"source" : "src"
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						0
+					]
 				},
 				{
 					"build" : "tests",
@@ -48,7 +52,7 @@
 					"source" : "tests",
 					"targetIndexes" : 
 					[
-						4
+						5
 					]
 				},
 				{
@@ -74,7 +78,7 @@
 						5
 					],
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-_deps.googletest-build.googlemock-Debug-4fe0982c618bf9fc9279.json",
+					"jsonFile" : "directory-_deps.googletest-build.googlemock-Debug-953913ca5bd85a3ebbcc.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.5"
@@ -84,14 +88,14 @@
 					"source" : "cmake-build-debug/_deps/googletest-src/googlemock",
 					"targetIndexes" : 
 					[
-						0,
-						1
+						1,
+						2
 					]
 				},
 				{
 					"build" : "_deps/googletest-build/googletest",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-_deps.googletest-build.googletest-Debug-daffe174745d106dcce1.json",
+					"jsonFile" : "directory-_deps.googletest-build.googletest-Debug-76ebb8b5fceeeb906264.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.5"
@@ -101,8 +105,8 @@
 					"source" : "cmake-build-debug/_deps/googletest-src/googletest",
 					"targetIndexes" : 
 					[
-						2,
-						3
+						3,
+						4
 					]
 				}
 			],
@@ -119,7 +123,11 @@
 						0,
 						1
 					],
-					"name" : "RecommendationSystem"
+					"name" : "RecommendationSystem",
+					"targetIndexes" : 
+					[
+						0
+					]
 				},
 				{
 					"childIndexes" : 
@@ -134,7 +142,7 @@
 					"parentIndex" : 0,
 					"targetIndexes" : 
 					[
-						4
+						5
 					]
 				},
 				{
@@ -162,8 +170,8 @@
 					"parentIndex" : 2,
 					"targetIndexes" : 
 					[
-						0,
-						1
+						1,
+						2
 					]
 				},
 				{
@@ -175,13 +183,20 @@
 					"parentIndex" : 3,
 					"targetIndexes" : 
 					[
-						2,
-						3
+						3,
+						4
 					]
 				}
 			],
 			"targets" : 
 			[
+				{
+					"directoryIndex" : 1,
+					"id" : "RecommendationApp::@145eef247bfb46b6828c",
+					"jsonFile" : "target-RecommendationApp-Debug-51d9048a56c1c18c7903.json",
+					"name" : "RecommendationApp",
+					"projectIndex" : 0
+				},
 				{
 					"directoryIndex" : 4,
 					"id" : "gmock::@0f7bb11d64f3678238c7",
@@ -192,7 +207,7 @@
 				{
 					"directoryIndex" : 4,
 					"id" : "gmock_main::@0f7bb11d64f3678238c7",
-					"jsonFile" : "target-gmock_main-Debug-347eab80299e95de938f.json",
+					"jsonFile" : "target-gmock_main-Debug-b075c5d4e45ee83ca928.json",
 					"name" : "gmock_main",
 					"projectIndex" : 3
 				},
@@ -213,7 +228,7 @@
 				{
 					"directoryIndex" : 2,
 					"id" : "runTests::@a44f0ac069e85531cdee",
-					"jsonFile" : "target-runTests-Debug-029defff00547b0c8fb2.json",
+					"jsonFile" : "target-runTests-Debug-9ff96a2c741dd4540902.json",
 					"name" : "runTests",
 					"projectIndex" : 1
 				}

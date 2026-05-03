@@ -5,6 +5,7 @@ C:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/cmake-buil
 C:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/cmake-build-debug/CMakeFiles/install.dir
 C:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/cmake-build-debug/CMakeFiles/install/local.dir
 C:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/cmake-build-debug/CMakeFiles/install/strip.dir
+C:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/cmake-build-debug/src/CMakeFiles/RecommendationApp.dir
 C:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/cmake-build-debug/src/CMakeFiles/test.dir
 C:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/cmake-build-debug/src/CMakeFiles/edit_cache.dir
 C:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/cmake-build-debug/src/CMakeFiles/rebuild_cache.dir

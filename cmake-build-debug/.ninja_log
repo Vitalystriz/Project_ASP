@@ -1,6 +1,18 @@
 # ninja log v6
 23	181	7990792521882724	tests/CMakeFiles/runTests.dir/__/src/math.cpp.obj	70239e8974eedaea
-17	2352	7990792521834330	tests/CMakeFiles/runTests.dir/test_main.cpp.obj	a23961ed180c49ac
+19	1683	7994970383285132	tests/CMakeFiles/runTests.dir/test_main.cpp.obj	a23961ed180c49ac
 10	8834	7990792521756563	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	399ce982fe73c3f8
 8836	9497	7990792610010469	lib/libgtest.a	6a3174c6cdce0abc
-9497	9884	7990792616620521	tests/runTests.exe	3f8ee35b1c000811
+10	2060	7994976508073833	tests/CMakeFiles/runTests.dir/test_getArgs.cpp.obj	c0b515f2c8b73db9
+1680	2218	7995340722286407	tests/runTests.exe	60eb60c06dc26a31
+35	1268	7994970383441328	tests/CMakeFiles/runTests.dir/__/src/HelpCommand.cpp.obj	8ce66f5a077d0bf3
+12	1156	7994973371567302	tests/CMakeFiles/runTests.dir/__/src/App.cpp.obj	181ddf0b7f8e77e6
+13	1098	7994970449879894	tests/CMakeFiles/runTests.dir/__/src/AddCommand.cpp.obj	6258f2ad13c1431b
+20	1069	7994970449956791	tests/CMakeFiles/runTests.dir/__/src/DisplayErrorClass.cpp.obj	1c1b55659b32aad
+11	1209	7995340705591167	tests/CMakeFiles/runTests.dir/__/src/Initialization.cpp.obj	419d2c3b6da857c0
+16	1183	7994970449920612	tests/CMakeFiles/runTests.dir/__/src/RecommendCommand.cpp.obj	363886f4b963c3fd
+16	1401	7994973371604305	tests/CMakeFiles/runTests.dir/__/src/ConsoleMenu.cpp.obj	5f0dfce7c7cd11fa
+8	2295	7994973371528291	tests/CMakeFiles/runTests.dir/test_nextCommand.cpp.obj	a3b85754d486e753
+16	1680	7995340705648732	tests/CMakeFiles/runTests.dir/test_Initialization.cpp.obj	e8d7f73cb39c23d1
+12	1516	7995341098330146	tests/CMakeFiles/runTests.dir/test_helpCommand.cpp.obj	cbbc191107b00738
+1517	1832	7995341113373705	tests/runTests.exe	c6e16ee61953cffd
