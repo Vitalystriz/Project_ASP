@@ -1,16 +1,16 @@
 //
-// Created by geras on 29.04.2026.
+// Created by vitaly on 29.04.2026.
 //
 
 #include "Initialization.h"
 #include <map>
-#include "ICommand.h"
+#include "command/ICommand.h"
 #include "App.h"
-#include "ConsoleMenu.h"
-#include "HelpCommand.h"
-#include "AddCommand.h"
-#include "DisplayErrorClass.h"
-#include "RecommendCommand.h"
+#include "menu/ConsoleMenu.h"
+#include "command/HelpCommand.h"
+#include "command/AddCommand.h"
+#include "command/DisplayErrorClass.h"
+#include "command/RecommendCommand.h"
 
 
 

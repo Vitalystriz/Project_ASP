@@ -1,10 +1,10 @@
 //
-// Created by geras on 03.05.2026.
+// Created by vitaly on 27.04.2026.
 //
 // tests/test_Initialization.cpp
 
 #include <gtest/gtest.h>
-#include "Initialization.h"
+#include "run/Initialization.h"
 
 TEST(InitializationTest, CreateCommandMapPopulatesCorrectly) {
     Initialization init;

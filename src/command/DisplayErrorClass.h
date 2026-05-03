@@ -1,5 +1,5 @@
 //
-// Created by geras on 02.05.2026.
+// Created by vitaly on 02.05.2026.
 //
 
 #ifndef DISPLAYERRORCLASS_H

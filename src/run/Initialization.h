@@ -1,5 +1,5 @@
 //
-// Created by geras on 29.04.2026.
+// Created by vitaly on 29.04.2026.
 //
 
 #ifndef INITIALIZATION_H
@@ -7,7 +7,7 @@
 
 
 #include <map>
-#include "ICommand.h"
+#include "command/ICommand.h"
 class Initialization {
   public:
     std::map<std::string, ICommand*> createCommandMap();

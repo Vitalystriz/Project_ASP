@@ -8,7 +8,7 @@
 #include <map>
 #include <vector>
 #include "IMenu.h"
-#include "HelpCommand.h"
+#include "command/HelpCommand.h"
 #include "ConsoleMenu.h"
 
     ConsoleMenu::ConsoleMenu() {

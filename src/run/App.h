@@ -1,5 +1,5 @@
 //
-// Created by geras on 28.04.2026.
+// Created by vitaly on 28.04.2026.
 //
 
 #ifndef APP_H
@@ -7,10 +7,10 @@
 
 #include <map>
 #include <string>
-#include "IMenu.h"
+#include "menu/IMenu.h"
 
 
-#include "ICommand.h"
+#include "command/ICommand.h"
 
 
 class App {

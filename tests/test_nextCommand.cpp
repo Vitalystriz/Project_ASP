@@ -1,8 +1,8 @@
 //
-// Created by geras on 02.05.2026.
+// Created by vitaly on 02.05.2026.
 //
 
-#include "ConsoleMenu.h"
+#include "menu/ConsoleMenu.h"
 #include <gtest/gtest.h>
 #include <sstream>
 

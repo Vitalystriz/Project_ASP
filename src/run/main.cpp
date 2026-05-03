@@ -1,5 +1,5 @@
 //
-// Created by gvitalyon 30.04.2026.
+// Created by vitaly 30.04.2026.
 //
 // src/main.cpp
 
