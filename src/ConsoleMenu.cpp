@@ -24,12 +24,7 @@
 std::string ConsoleMenu::nextCommand() { // -> int command
         std::string line;
 
-        // 1. Read the entire line from the user at once
-        if(!std::getline(std::cin, line) || line == "exit") {
-            return "exit";
-        }
-
-        if (line.empty()) {
+        if (!std::getline(std::cin, line) || line.empty()) {
             return "error";
         }
 
@@ -37,6 +32,8 @@ std::string ConsoleMenu::nextCommand() { // -> int command
         std::string command;
 
         ss >> command;
+
+        if (command == "exit") return "exit";
 
         if (command == "help") return "help";
 

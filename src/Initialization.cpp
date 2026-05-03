@@ -17,10 +17,11 @@
 std::map<std::string, ICommand*> Initialization::createCommandMap() {
     std::map<std::string, ICommand*> commands; // fix magic numbers trouble
 
-    commands["exit"] = new DisplayErrorClass();
+    commands["error"] = new DisplayErrorClass();
     commands["help"] = new HelpCommand();
     commands["add"] = new AddCommand();
     commands["recommend"] = new RecommendCommand();
+    commands["exit"] = nullptr;
 
     return commands;
 }

@@ -15,9 +15,9 @@ void setInput(const std::string& input) {
 }
 
 TEST(ConsoleMenuTest, ExitCommand) {
-    setInput("exit\n");
+    setInput("error\n");
     ConsoleMenu menu;
-    EXPECT_EQ(menu.nextCommand(), "exit"); // Changed from 0
+    EXPECT_EQ(menu.nextCommand(), "error"); // Changed from 0
 }
 
 TEST(ConsoleMenuTest, EmptyInput) {

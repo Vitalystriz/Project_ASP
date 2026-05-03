@@ -31,3 +31,7 @@
 1587	1881	7995414374792392	tests/runTests.exe	199f9f9b5b1874a4
 8	1305	7995414561496357	tests/CMakeFiles/runTests.dir/test_Initialization.cpp.obj	e8d7f73cb39c23d1
 1306	1597	7995414574472416	tests/runTests.exe	199f9f9b5b1874a4
+72	2330	7995425071739638	tests/CMakeFiles/runTests.dir/__/src/Initialization.cpp.obj	419d2c3b6da857c0
+69	2385	7995425071704317	tests/CMakeFiles/runTests.dir/__/src/ConsoleMenu.cpp.obj	5f0dfce7c7cd11fa
+63	2919	7995425071647225	tests/CMakeFiles/runTests.dir/test_nextCommand.cpp.obj	a3b85754d486e753
+2919	3475	7995425100207694	tests/runTests.exe	199f9f9b5b1874a4
