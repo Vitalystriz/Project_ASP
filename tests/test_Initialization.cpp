@@ -14,17 +14,17 @@ TEST(InitializationTest, CreateCommandMapPopulatesCorrectly) {
     EXPECT_EQ(commandMap.size(), 4);
 
     // 2. Verify specific keys exist and are not null pointers
-    EXPECT_TRUE(commandMap.find(-1) != commandMap.end());
-    EXPECT_NE(commandMap[-1], nullptr); // DisplayErrorClass
+    EXPECT_TRUE(commandMap.find("exit") != commandMap.end());
+    EXPECT_NE(commandMap["exit"], nullptr); // DisplayErrorClass
 
-    EXPECT_TRUE(commandMap.find(1) != commandMap.end());
-    EXPECT_NE(commandMap[1], nullptr);  // HelpCommand
+    EXPECT_TRUE(commandMap.find("help") != commandMap.end());
+    EXPECT_NE(commandMap["help"], nullptr);  // HelpCommand
 
-    EXPECT_TRUE(commandMap.find(2) != commandMap.end());
-    EXPECT_NE(commandMap[2], nullptr);  // AddCommand
+    EXPECT_TRUE(commandMap.find("add") != commandMap.end());
+    EXPECT_NE(commandMap["add"], nullptr);  // AddCommand
 
-    EXPECT_TRUE(commandMap.find(3) != commandMap.end());
-    EXPECT_NE(commandMap[3], nullptr);  // RecommendCommand
+    EXPECT_TRUE(commandMap.find("recommend") != commandMap.end());
+    EXPECT_NE(commandMap["recommend"], nullptr);  // RecommendCommand
 
     // 3. Clean up the memory allocated by new in createCommandMap
     // to prevent memory leaks during testing

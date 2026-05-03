@@ -23,6 +23,8 @@ add_executable(RecommendationApp
         ../src/AddCommand.cpp
 
         ../src/RecommendCommand.cpp
+        DataManager.cpp
+        DataManager.h
 
 
 )

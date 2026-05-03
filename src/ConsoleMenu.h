@@ -16,7 +16,7 @@ public:
     ConsoleMenu();
 
     static void printMenu();
-    int nextCommand() override;
+    std::string nextCommand() override;
     void displayError() override;
 
     void exitMessage() override;

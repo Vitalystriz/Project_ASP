@@ -14,7 +14,7 @@ class IMenu {
 public:
     virtual ~IMenu() = default;
 
-    virtual int nextCommand() = 0 ;
+    virtual std::string nextCommand() = 0 ;
     virtual void displayError() = 0;
     virtual void exitMessage() = 0;
     virtual std::map<int, std::vector<int>> getArgs() = 0;

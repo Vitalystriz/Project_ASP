@@ -17,9 +17,9 @@ class App {
     private:
         int** matrix = nullptr;
         IMenu* menu;
-        std::map<int,ICommand*> commands_map{};
+        std::map<std::string, ICommand*> commands_map{};
     public:
-        explicit App(IMenu* menu, std::map<int, ICommand*> map);
+        explicit App(IMenu* menu, std::map<std::string, ICommand*> map);
 
         void run();
 };

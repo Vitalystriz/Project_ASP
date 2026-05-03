@@ -179,6 +179,12 @@ build src/CMakeFiles/RecommendationApp.dir/RecommendCommand.cpp.obj: CXX_COMPILE
   OBJECT_DIR = src\CMakeFiles\RecommendationApp.dir
   OBJECT_FILE_DIR = src\CMakeFiles\RecommendationApp.dir
 
+build src/CMakeFiles/RecommendationApp.dir/DataManager.cpp.obj: CXX_COMPILER__RecommendationApp_unscanned_Debug C$:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/src/DataManager.cpp || cmake_object_order_depends_target_RecommendationApp
+  DEP_FILE = src\CMakeFiles\RecommendationApp.dir\DataManager.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = src\CMakeFiles\RecommendationApp.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\RecommendationApp.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target RecommendationApp
@@ -187,7 +193,7 @@ build src/CMakeFiles/RecommendationApp.dir/RecommendCommand.cpp.obj: CXX_COMPILE
 #############################################
 # Link the executable src\RecommendationApp.exe
 
-build src/RecommendationApp.exe: CXX_EXECUTABLE_LINKER__RecommendationApp_Debug src/CMakeFiles/RecommendationApp.dir/main.cpp.obj src/CMakeFiles/RecommendationApp.dir/Initialization.cpp.obj src/CMakeFiles/RecommendationApp.dir/App.cpp.obj src/CMakeFiles/RecommendationApp.dir/ConsoleMenu.cpp.obj src/CMakeFiles/RecommendationApp.dir/DisplayErrorClass.cpp.obj src/CMakeFiles/RecommendationApp.dir/HelpCommand.cpp.obj src/CMakeFiles/RecommendationApp.dir/AddCommand.cpp.obj src/CMakeFiles/RecommendationApp.dir/RecommendCommand.cpp.obj
+build src/RecommendationApp.exe: CXX_EXECUTABLE_LINKER__RecommendationApp_Debug src/CMakeFiles/RecommendationApp.dir/main.cpp.obj src/CMakeFiles/RecommendationApp.dir/Initialization.cpp.obj src/CMakeFiles/RecommendationApp.dir/App.cpp.obj src/CMakeFiles/RecommendationApp.dir/ConsoleMenu.cpp.obj src/CMakeFiles/RecommendationApp.dir/DisplayErrorClass.cpp.obj src/CMakeFiles/RecommendationApp.dir/HelpCommand.cpp.obj src/CMakeFiles/RecommendationApp.dir/AddCommand.cpp.obj src/CMakeFiles/RecommendationApp.dir/RecommendCommand.cpp.obj src/CMakeFiles/RecommendationApp.dir/DataManager.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = src\CMakeFiles\RecommendationApp.dir
@@ -309,13 +315,6 @@ build tests/CMakeFiles/runTests.dir/test_getArgs.cpp.obj: CXX_COMPILER__runTests
   OBJECT_DIR = tests\CMakeFiles\runTests.dir
   OBJECT_FILE_DIR = tests\CMakeFiles\runTests.dir
 
-build tests/CMakeFiles/runTests.dir/__/src/math.cpp.obj: CXX_COMPILER__runTests_unscanned_Debug C$:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/src/math.cpp || cmake_object_order_depends_target_runTests
-  DEP_FILE = tests\CMakeFiles\runTests.dir\__\src\math.cpp.obj.d
-  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -IC:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/tests/../src -isystem C:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/cmake-build-debug/_deps/googletest-src/googletest
-  OBJECT_DIR = tests\CMakeFiles\runTests.dir
-  OBJECT_FILE_DIR = tests\CMakeFiles\runTests.dir\__\src
-
 build tests/CMakeFiles/runTests.dir/__/src/App.cpp.obj: CXX_COMPILER__runTests_unscanned_Debug C$:/Vitaly/StudyDrive/SecondYear/AdvancedSystemProgramming/Project_ASP/src/App.cpp || cmake_object_order_depends_target_runTests
   DEP_FILE = tests\CMakeFiles\runTests.dir\__\src\App.cpp.obj.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
@@ -387,7 +386,7 @@ build tests/CMakeFiles/runTests.dir/test_helpCommand.cpp.obj: CXX_COMPILER__runT
 #############################################
 # Link the executable tests\runTests.exe
 
-build tests/runTests.exe: CXX_EXECUTABLE_LINKER__runTests_Debug tests/CMakeFiles/runTests.dir/test_main.cpp.obj tests/CMakeFiles/runTests.dir/test_nextCommand.cpp.obj tests/CMakeFiles/runTests.dir/test_getArgs.cpp.obj tests/CMakeFiles/runTests.dir/__/src/math.cpp.obj tests/CMakeFiles/runTests.dir/__/src/App.cpp.obj tests/CMakeFiles/runTests.dir/__/src/ConsoleMenu.cpp.obj tests/CMakeFiles/runTests.dir/__/src/HelpCommand.cpp.obj tests/CMakeFiles/runTests.dir/__/src/Initialization.cpp.obj tests/CMakeFiles/runTests.dir/__/src/AddCommand.cpp.obj tests/CMakeFiles/runTests.dir/__/src/RecommendCommand.cpp.obj tests/CMakeFiles/runTests.dir/__/src/DisplayErrorClass.cpp.obj tests/CMakeFiles/runTests.dir/test_Initialization.cpp.obj tests/CMakeFiles/runTests.dir/test_helpCommand.cpp.obj | lib/libgtest.a || lib/libgtest.a
+build tests/runTests.exe: CXX_EXECUTABLE_LINKER__runTests_Debug tests/CMakeFiles/runTests.dir/test_main.cpp.obj tests/CMakeFiles/runTests.dir/test_nextCommand.cpp.obj tests/CMakeFiles/runTests.dir/test_getArgs.cpp.obj tests/CMakeFiles/runTests.dir/__/src/App.cpp.obj tests/CMakeFiles/runTests.dir/__/src/ConsoleMenu.cpp.obj tests/CMakeFiles/runTests.dir/__/src/HelpCommand.cpp.obj tests/CMakeFiles/runTests.dir/__/src/Initialization.cpp.obj tests/CMakeFiles/runTests.dir/__/src/AddCommand.cpp.obj tests/CMakeFiles/runTests.dir/__/src/RecommendCommand.cpp.obj tests/CMakeFiles/runTests.dir/__/src/DisplayErrorClass.cpp.obj tests/CMakeFiles/runTests.dir/test_Initialization.cpp.obj tests/CMakeFiles/runTests.dir/test_helpCommand.cpp.obj | lib/libgtest.a || lib/libgtest.a
   FLAGS = -g
   LINK_LIBRARIES = lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = tests\CMakeFiles\runTests.dir

@@ -21,16 +21,16 @@
         help.execute();
     }
 
-int ConsoleMenu::nextCommand() { // -> int command
+std::string ConsoleMenu::nextCommand() { // -> int command
         std::string line;
 
         // 1. Read the entire line from the user at once
         if(!std::getline(std::cin, line) || line == "exit") {
-            return 0;
+            return "exit";
         }
 
         if (line.empty()) {
-            return -1;
+            return "error";
         }
 
         std::stringstream ss(line);
@@ -38,7 +38,7 @@ int ConsoleMenu::nextCommand() { // -> int command
 
         ss >> command;
 
-        if (command == "help") return 1;
+        if (command == "help") return "help";
 
         if (command == "add") {
             int uId;
@@ -50,7 +50,7 @@ int ConsoleMenu::nextCommand() { // -> int command
                 }
                 mapArgs[uId] = pId;
             }
-            return 2;
+            return "add";
         }
 
         if (command == "recommend") {
@@ -61,10 +61,10 @@ int ConsoleMenu::nextCommand() { // -> int command
                 pId.push_back(temp_pId); // Safely append to the vector
                 mapArgs[uId] = pId; // map{targetUId: targetPId}
             }
-            return 3;
+            return "recommend";
         }
 
-        return -1;
+        return "error";
     }
 
     void ConsoleMenu::displayError() {

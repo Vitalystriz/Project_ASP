@@ -18,7 +18,6 @@ add_executable(runTests
         test_main.cpp
         test_nextCommand.cpp
         test_getArgs.cpp
-        ../src/math.cpp
         ../src/App.cpp
         ../src/App.h
         ../src/ConsoleMenu.cpp

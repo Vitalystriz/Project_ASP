@@ -10,7 +10,7 @@
 #include "ICommand.h"
 class Initialization {
   public:
-    std::map<int, ICommand*> createCommandMap();
+    std::map<std::string, ICommand*> createCommandMap();
     void appLaunch();
 };
 

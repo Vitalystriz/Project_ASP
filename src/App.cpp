@@ -5,11 +5,11 @@
 #include "App.h"
 #include <utility>
 
-    App::App(IMenu* menu, std::map<int, ICommand*> map): menu(menu), commands_map(std::move(map)) {}
+    App::App(IMenu* menu, std::map<std::string, ICommand*> map): menu(menu), commands_map(std::move(map)) {}
     void App::run() {
         while(true) {
-            int command = menu->nextCommand();
-            if (command == 0) {
+             std::string command = menu->nextCommand();
+            if (command == "exit") {
                 menu->exitMessage();
                 break;
             }

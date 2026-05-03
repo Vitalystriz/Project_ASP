@@ -14,13 +14,13 @@
 
 
 
-std::map<int, ICommand*> Initialization::createCommandMap() {
-    std::map<int, ICommand*> commands; // fix magic numbers trouble
+std::map<std::string, ICommand*> Initialization::createCommandMap() {
+    std::map<std::string, ICommand*> commands; // fix magic numbers trouble
 
-    commands[-1] = new DisplayErrorClass();
-    commands[1] = new HelpCommand();
-    commands[2] = new AddCommand();
-    commands[3] = new RecommendCommand();
+    commands["exit"] = new DisplayErrorClass();
+    commands["help"] = new HelpCommand();
+    commands["add"] = new AddCommand();
+    commands["recommend"] = new RecommendCommand();
 
     return commands;
 }
@@ -29,7 +29,7 @@ void Initialization::appLaunch() {
 
     IMenu* menu = new ConsoleMenu();
 
-    std::map<int, ICommand*> commands = createCommandMap();
+    std::map<std::string, ICommand*> commands = createCommandMap();
 
     App app(menu, commands);
 
