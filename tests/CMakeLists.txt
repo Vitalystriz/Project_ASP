@@ -14,6 +14,27 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-add_executable(runTests test_main.cpp ../src/math.cpp) # change to relevant files
+add_executable(runTests
+        # --- Test Files ---
+        test_main.cpp
+        test_nextCommand.cpp
+        test_getArgs.cpp
+        test_Initialization.cpp
+        test_helpCommand.cpp
+
+        # --- Source Files (Everything EXCEPT src/run/main.cpp) ---
+        ../src/run/Initialization.cpp
+        ../src/run/App.cpp
+
+        ../src/menu/ConsoleMenu.cpp
+
+        ../src/command/DisplayErrorClass.cpp
+        ../src/command/HelpCommand.cpp
+        ../src/command/AddCommand.cpp
+        ../src/command/RecommendCommand.cpp
+
+        ../src/DataManager.cpp
+)
+
 target_include_directories(runTests PRIVATE ../src)
-target_link_libraries(runTests GTest::gtest) # change to relevant files
+target_link_libraries(runTests GTest::gtest)

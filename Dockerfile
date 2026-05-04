@@ -9,9 +9,8 @@ RUN mkdir build && cd build && cmake .. && make
 # Stage 2: App Run (Main target)
 FROM ubuntu:latest AS runtime
 WORKDIR /app
-# Копируем только собранное приложение и папку data
 COPY --from=builder /app/build/src/RecommendationApp .
-COPY --from=builder /app/data ./data
+# COPY --from=builder /app/data ./data # Steel don't have it
 
 CMD ["./RecommendationApp"]
 
