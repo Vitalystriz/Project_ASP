@@ -1,5 +1,5 @@
 //
-// Created by geras on 03.05.2026.
+// Created by vitaly on 03.05.2026.
 //
 
 #include "DataManager.h"

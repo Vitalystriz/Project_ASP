@@ -4,7 +4,7 @@
 // tests/test_HelpCommand.cpp
 
 #include <gtest/gtest.h>
-#include "HelpCommand.h"
+#include "command/HelpCommand.h"
 #include <sstream>
 #include <iostream>
 
