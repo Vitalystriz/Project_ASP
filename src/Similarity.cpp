@@ -7,15 +7,15 @@
         for (std::map<int, it; it != matrix.end(); ++it) {
             int otherId = it->first;
             std::vector<int>& products = it->second;
-            if (otherId == user) continue;
-
-            int count = 0;
-            for (int i = 0; i < products.size(); ++i) {
-                if (std::find(userProducts.begin(), userProducts.end(), products[i]) != userProducts.end()) {
-                    count++;
+            if (otherId != user) {
+                int count = 0;
+                for (int i = 0; i < products.size(); ++i) {
+                    if (std::find(userProducts.begin(), userProducts.end(), products[i]) != userProducts.end()) {
+                        count++;
+                    }
                 }
+                similarityMap[otherId] = count;
             }
-            similarityMap[otherId] = count;
         }
     }
 
