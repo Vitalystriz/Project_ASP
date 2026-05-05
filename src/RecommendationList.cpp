@@ -1,9 +1,10 @@
 #include "RecommendationList.h"
+#include "CandidateProducts.h"
+#include "Similarity.h"
+#include <algorithm>
+#include <vector>
+#include <map>
 
-RecommendationList::RecommendationList(Similarity* s, CandidateProducts* cp) 
-    : similarity(s), candidateProducts(cp) {}
-
-//
 //forces the rule that we were given: products that are tied- are sorted in an
 //ascending order
 //creates a sorted list with all the final recommendation scores
