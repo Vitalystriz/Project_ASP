@@ -8,6 +8,7 @@
 
 #include "persistence/dataAction/AppendProductAction.h"
 #include "persistence/dataAction/AppendUserAction.h"
+#include "persistence/dataStorage/AppendUserStorage.h"
 
 
 AddCommand::AddCommand(DataManager *dm) {
@@ -16,7 +17,7 @@ AddCommand::AddCommand(DataManager *dm) {
 
 void AddCommand::execute(std::map<int, std::vector<int>> map) {
     this->map = std::move(map);
-    std::cout<<"Adding user..."<<std::endl;
+
     auto it = this->map.begin();
     int userId = it->first;
     std::vector<int> data = it->second;
@@ -30,7 +31,11 @@ void AddCommand::execute(std::map<int, std::vector<int>> map) {
     append_products_action->execute(dataManager);
     delete append_products_action;
 
+    auto* append_user_storage = new AppendUserStorage(userId);
+    append_user_storage->execute(dataManager);
+    delete append_user_storage;
 
+    std::cout<<"Adding user..."<<std::endl;
 }
 
 std::map<int, std::vector<int> > AddCommand::getArgs() {

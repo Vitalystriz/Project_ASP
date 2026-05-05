@@ -46,7 +46,9 @@ add_executable(runTests
         ../src/DataManager.cpp
         ../src/persistence/dataAction/AppendUserAction.cpp
         ../src/persistence/dataAction/AppendProductAction.cpp
-
+        ../src/persistence/dataStorage/AppendUserStorage.cpp
+        ../src/persistence/dataStorage/AppendUserStorage.cpp
+        ../src/persistence/dataStorage/AppendProdcutStorage.cpp
 )
 
 target_include_directories(runTests PRIVATE ../src)

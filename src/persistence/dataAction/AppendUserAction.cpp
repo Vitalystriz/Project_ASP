@@ -10,12 +10,12 @@ AppendUserAction::AppendUserAction(int userId) {
 }
 
 void AppendUserAction::execute(DataManager* dataManager) {
-    std::map <int, std::vector <int>> data = dataManager->getMapUserToProducts();
+    std::map <int, std::set <int>> data = dataManager->getMapUserToProducts();
     if (data.find(userId) != data.end()) {
         this->displayError();
         return;
     }
-    std::vector <int> products;
+    std::set <int> products;
     data[userId] = products;
     dataManager->setMapUserToProducts(data);
 }

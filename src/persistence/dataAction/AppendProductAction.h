@@ -7,6 +7,8 @@
 
 #include "IDataAction.h"
 #include <vector>
+#include <set>
+
 class AppendProductAction : public IDataAction {
 private:
     std::vector<int> products;

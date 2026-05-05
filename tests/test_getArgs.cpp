@@ -77,15 +77,17 @@ TEST(ConsoleMenuGetArgsTest, MultipleCommandsDifferentUsers) {
     ConsoleMenu menu;
 
     menu.nextCommand(); // Consumes 'add 1 10'
+    auto args1 = menu.getArgs();
     menu.nextCommand(); // Consumes 'add 2 20 21'
+    auto args2 = menu.getArgs();
 
-    auto args = menu.getArgs();
+    ASSERT_EQ(args1.size(), 1);
+    ASSERT_EQ(args2.size(), 1);
 
-    ASSERT_EQ(args.size(), 2);
     // Verify user 1
-    EXPECT_EQ(args[1], std::vector<int>({10}));
+    EXPECT_EQ(args1[1], std::vector<int>({10}));
     // Verify user 2
-    EXPECT_EQ(args[2], std::vector<int>({20, 21}));
+    EXPECT_EQ(args2[2], std::vector<int>({20, 21}));
 }
 
 // 6. Test that running the same user twice overwrites their previous arguments

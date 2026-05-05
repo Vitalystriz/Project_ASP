@@ -10,7 +10,7 @@ RUN mkdir build && cd build && cmake .. && make
 FROM ubuntu:latest AS runtime
 WORKDIR /app
 COPY --from=builder /app/build/src/RecommendationApp .
-# COPY --from=builder /app/data ./data # Steel don't have it
+COPY --from=builder /app/data ./data
 
 CMD ["./RecommendationApp"]
 

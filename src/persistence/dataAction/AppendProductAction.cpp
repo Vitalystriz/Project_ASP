@@ -14,18 +14,18 @@ AppendProductAction::AppendProductAction(std::vector<int> products, int userId) 
 }
 void AppendProductAction::execute(DataManager *dataManager) {
     try {
-        std::map <int, std::vector <int>> data = dataManager->getMapUserToProducts();
-        //set all products for user
-        data[this->userId].insert(data[this->userId].end(), this->products.begin(), this->products.end());
+        std::map <int, std::set <int>> data = dataManager->getMapUserToProducts();
+
+        data[this->userId].insert(this->products.begin(), this->products.end());
         dataManager->setMapUserToProducts(data);
 
-        std::map <int, std::vector <int>> data2 = dataManager->getMapProductToUser();
+        std::map <int, std::set <int>> data2 = dataManager->getMapProductToUser();
 
         //iterating all products and set user
         for(int product : this->products) {
-            data2[product].push_back(this->userId);
-            dataManager->setMapProductToUsers(data2);
+            data2[product].insert(this->userId);
         }
+        dataManager->setMapProductToUsers(data2);
     }
     catch (...) {
         this->displayError();

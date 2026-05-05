@@ -7,17 +7,17 @@
 
 #include <map>
 #include <vector>
-
+#include <set>
 
 class DataManager {
 private:
-    std::map <int, std::vector <int>> userToProducts;
-    std::map <int, std::vector <int>> productToUser;
+    std::map <int, std::set <int>> userToProducts;
+    std::map <int, std::set <int>> productToUser;
 public:
-    void setMapUserToProducts(std::map <int, std::vector <int>>);
-    void setMapProductToUsers(std::map <int, std::vector <int>>);
-    std::map <int, std::vector <int>> getMapUserToProducts();
-    std::map <int, std::vector <int>> getMapProductToUser();
+    void setMapUserToProducts(std::map <int, std::set <int>>);
+    void setMapProductToUsers(std::map <int, std::set <int>>);
+    std::map <int, std::set <int>> getMapUserToProducts();
+    std::map <int, std::set <int>> getMapProductToUser();
 
 };
 

@@ -3,20 +3,19 @@
 //
 
 #include "DataManager.h"
-#include <map>
-#include <vector>
-void DataManager::setMapUserToProducts(std::map<int, std::vector<int> > map) {
+
+void DataManager::setMapUserToProducts(std::map<int, std::set<int> > map) {
     userToProducts = std::move(map);
 }
 
-void DataManager::setMapProductToUsers(std::map<int, std::vector<int> > map) {
+void DataManager::setMapProductToUsers(std::map<int, std::set<int> > map) {
     productToUser = std::move(map);
 }
 
-std::map<int, std::vector<int> > DataManager::getMapProductToUser() {
+std::map<int, std::set<int> > DataManager::getMapProductToUser() {
     return productToUser;
 }
 
-std::map<int, std::vector<int> > DataManager::getMapUserToProducts() {
+std::map<int, std::set<int> > DataManager::getMapUserToProducts() {
     return userToProducts;
 }

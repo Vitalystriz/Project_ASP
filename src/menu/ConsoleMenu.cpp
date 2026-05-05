@@ -32,6 +32,7 @@ std::string ConsoleMenu::nextCommand() { // -> int command
         std::string command;
 
         ss >> command;
+        mapArgs.clear();
 
         if (command == "exit") return "exit";
 
