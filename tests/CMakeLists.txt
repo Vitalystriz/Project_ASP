@@ -25,6 +25,9 @@ add_executable(runTests
         test_dataAction/test_appendUser.cpp
         test_addCommand.cpp
 
+        test_calcSimilarity.cpp
+        test_calcWeight.cpp
+        test_finalList.cpp
 
         # --- Source Files (Everything EXCEPT src/run/main.cpp) ---
         ../src/run/Initialization.cpp
@@ -37,6 +40,9 @@ add_executable(runTests
         ../src/command/AddCommand.cpp
         ../src/command/RecommendCommand.cpp
 
+        ../src/Similarity.cpp
+        ../src/CandidateProducts.cpp
+        ../src/RecommendationList.cpp
         ../src/DataManager.cpp
         ../src/persistence/dataAction/AppendUserAction.cpp
         ../src/persistence/dataAction/AppendProductAction.cpp
