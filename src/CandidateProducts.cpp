@@ -7,7 +7,8 @@
 
             //calculate the recommendation weight by summing the similarity values
             //of all the other users that watched this target product.
-            for (int i = 0; i < products.size(); ++i) {
+            for (int i = 0; i < products.size(); ++i)
+                {
                 if (products[i] == productId) {
                     int tempSimilarity = similarityMap[userId];
                     for (int i = 0; i < products.size(); ++i) {
