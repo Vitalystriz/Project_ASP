@@ -1,17 +1,18 @@
 #ifndef RECOMMENDATIONLIST_H
 #define RECOMMENDATIONLIST_H
 
-#include "Similarity.h"
-#include "CandidateProducts.h"
+class Similarity;
+class CandidateProducts;
 
 class RecommendationList {
 private:
     Similarity* similarity;
     CandidateProducts* candidateProducts;
-
 public:
-    RecommendationList(Similarity* s, CandidateProducts* cp);
+    RecommendationList(Similarity* s, CandidateProducts* cp)
+        : similarity(s), candidateProducts(cp) {}
+
     int* calculate();
 };
 
-#endif
+#endif //RECOMMENDATIONLIST_H

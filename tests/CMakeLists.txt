@@ -21,6 +21,7 @@ add_executable(runTests
         test_getArgs.cpp
         test_Initialization.cpp
         test_helpCommand.cpp
+        test_calcSimilarity.cpp
 
         # --- Source Files (Everything EXCEPT src/run/main.cpp) ---
         ../src/run/Initialization.cpp
@@ -30,6 +31,7 @@ add_executable(runTests
 
         ../src/command/DisplayErrorClass.cpp
         ../src/command/HelpCommand.cpp
+        ../src/Similarity.cpp
         ../src/command/AddCommand.cpp
         ../src/command/RecommendCommand.cpp
 
