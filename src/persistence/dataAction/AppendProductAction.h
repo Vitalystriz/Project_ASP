@@ -1,0 +1,22 @@
+//
+// Created by vitaly 05.05.2026.
+//
+
+#ifndef APPENDPRODUCTACTION_H
+#define APPENDPRODUCTACTION_H
+
+#include "IDataAction.h"
+#include <vector>
+class AppendProductAction : public IDataAction {
+private:
+    std::vector<int> products;
+    int userId;
+public:
+    AppendProductAction(std::vector<int> products, int userId);
+    void execute(DataManager* dataManager) override;
+    void displayError() override;
+};
+
+
+
+#endif //APPENDPRODUCTACTION_H

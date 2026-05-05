@@ -14,10 +14,10 @@ private:
     std::map <int, std::vector <int>> userToProducts;
     std::map <int, std::vector <int>> productToUser;
 public:
-    static void setMapUserToProducts(std::map <int, std::vector <int>>);
-    static void setMapProductToUsers(std::map <int, std::vector <int>>);
-    static std::map <int, std::vector <int>> getMapUserToProducts();
-    static std::map <int, std::vector <int>> getMapProductToUser();
+    void setMapUserToProducts(std::map <int, std::vector <int>>);
+    void setMapProductToUsers(std::map <int, std::vector <int>>);
+    std::map <int, std::vector <int>> getMapUserToProducts();
+    std::map <int, std::vector <int>> getMapProductToUser();
 
 };
 

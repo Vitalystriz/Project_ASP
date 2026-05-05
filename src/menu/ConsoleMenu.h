@@ -15,7 +15,7 @@ private:
 public:
     ConsoleMenu();
 
-    static void printMenu();
+    void printMenu();
     std::string nextCommand() override;
     void displayError() override;
 

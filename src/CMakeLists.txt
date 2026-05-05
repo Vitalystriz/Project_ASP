@@ -23,6 +23,16 @@ add_executable(RecommendationApp
 
         DataManager.cpp
         DataManager.h
+        persistence/dataAction/IDataAction.h
+        persistence/dataAction/AppendUserAction.h
+        persistence/dataAction/AppendUserAction.cpp
+        persistence/dataAction/AppendProductAction.cpp
+        persistence/dataAction/AppendProductAction.h
+        persistence/dataStorage/IDataStorage.h
+        persistence/dataStorage/AppendUserStorage.cpp
+        persistence/dataStorage/AppendUserStorage.h
+        persistence/dataStorage/AppendProdcutStorage.cpp
+        persistence/dataStorage/AppendProdcutStorage.h
 )
 
 # Tell the compiler to treat the current directory (src)

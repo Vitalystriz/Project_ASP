@@ -21,6 +21,10 @@ add_executable(runTests
         test_getArgs.cpp
         test_Initialization.cpp
         test_helpCommand.cpp
+        test_dataAction/test_appendProduct.cpp
+        test_dataAction/test_appendUser.cpp
+        test_addCommand.cpp
+
 
         # --- Source Files (Everything EXCEPT src/run/main.cpp) ---
         ../src/run/Initialization.cpp
@@ -34,6 +38,9 @@ add_executable(runTests
         ../src/command/RecommendCommand.cpp
 
         ../src/DataManager.cpp
+        ../src/persistence/dataAction/AppendUserAction.cpp
+        ../src/persistence/dataAction/AppendProductAction.cpp
+
 )
 
 target_include_directories(runTests PRIVATE ../src)
