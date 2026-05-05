@@ -8,7 +8,8 @@ class CandidateProducts {
 private:
     std::map<int, int> candidateProductsMap;
 public:
-    void calculate(std::vector<int>& matrix, int productId);
+    void calculate(std::map<int, std::vector<int>>& matrix, int productId, std::map<int, int>& simMap);
+    std::map<int, int>& getMap();
 };
 
 #endif //CANDIDATEPRODUCTS_H

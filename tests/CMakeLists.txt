@@ -35,8 +35,19 @@ add_executable(runTests
         ../src/command/AddCommand.cpp
         ../src/command/RecommendCommand.cpp
 
+        test_calcWeight.cpp
+        ../src/math.cpp
+        ../src/App.cpp
+        ../src/ConsoleMenu.cpp
+        ../src/HelpCommand.cpp
+        ../src/Initialization.cpp
+        ../src/AddCommand.cpp
+        ../src/RecommendCommand.cpp
+        ../src/DisplayErrorClass.cpp
+        ../src/CandidateProducts.cpp
         ../src/DataManager.cpp
 )
 
 target_include_directories(runTests PRIVATE ../src)
+target_link_libraries(runTests GTest::gtest)
 target_link_libraries(runTests GTest::gtest)

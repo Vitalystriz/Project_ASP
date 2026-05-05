@@ -5,7 +5,14 @@
             int userId = it->first;
             std::vector<int>& products = it->second;
 
+<<<<<<< HEAD
             for (int i = 0; i < products.size(); ++i) {
+=======
+            //calculate the recommendation weight by summing the similarity values
+            //of all the other users that watched this target product.
+            for (int i = 0; i < products.size(); ++i)
+                {
+>>>>>>> PA-32-Implement-Recommendation-Weight-calculation-algorithm
                 if (products[i] == productId) {
                     int tempSimilarity = similarityMap[userId];
                     for (int i = 0; i < products.size(); ++i) {
