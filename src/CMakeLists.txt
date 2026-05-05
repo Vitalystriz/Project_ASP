@@ -23,6 +23,8 @@ add_executable(RecommendationApp
 
         DataManager.cpp
         DataManager.h
+
+        
 )
 
 # Tell the compiler to treat the current directory (src)
