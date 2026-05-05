@@ -9,6 +9,7 @@ include(FetchContent)
 FetchContent_Declare(
         googletest
         URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+        DOWNLOAD_EXTRACT_TIMESTAMP ON
 )
 # For Windows: Prevent overriding the parent project's compiler/linker settings
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
@@ -21,6 +22,9 @@ add_executable(runTests
         test_getArgs.cpp
         test_Initialization.cpp
         test_helpCommand.cpp
+        test_calcSimilarity.cpp
+        test_calcWeight.cpp
+        test_finalList.cpp
 
         # --- Source Files (Everything EXCEPT src/run/main.cpp) ---
         ../src/run/Initialization.cpp
@@ -33,6 +37,9 @@ add_executable(runTests
         ../src/command/AddCommand.cpp
         ../src/command/RecommendCommand.cpp
 
+        ../src/Similarity.cpp
+        ../src/CandidateProducts.cpp
+        ../src/RecommendationList.cpp
         ../src/DataManager.cpp
 )
 
