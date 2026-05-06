@@ -3,23 +3,25 @@
 //
 #include "AppendUserAction.h"
 
+#include <utility>
+
 #include "DataManager.h"
 
-AppendUserAction::AppendUserAction(int userId) {
-    this->userId = userId;
+AppendUserAction::AppendUserAction(std::string userId, std::vector<std::string> products) {
+    this->userId = std::move(userId);
+    this->products = std::move(products);
 }
 
 void AppendUserAction::execute(DataManager* dataManager) {
-    std::map <int, std::set <int>> data = dataManager->getMapUserToProducts();
-    if (data.find(userId) != data.end()) {
+    std::map <std::string, std::set <std::string>> data = dataManager->getMapUserToProducts();
+    if ( this->products.empty()) {
         this->displayError();
         return;
     }
-    std::set <int> products;
-    data[userId] = products;
+    data[userId].insert(products.begin(), products.end());
     dataManager->setMapUserToProducts(data);
 }
 
 void AppendUserAction::displayError() {
-    std::cout<<"User already exists"<<std::endl;
+    std::cout<<"Products list is empty"<<std::endl;
 }

@@ -1,32 +1,36 @@
 #include "CandidateProducts.h"
-#include <algorithm>
 
-    void CandidateProducts::calculate(std::map<int, std::vector<int>>& matrix, int productId, std::map<int, int>& similarityMap, int targetUserId) {
-        std::vector<int>& targetUserProducts = matrix[targetUserId];
-        
-        //calculate the recommendation weight by summing the similarity values
-        //of all the other users that watched this target product.
-        //exclude watched products.
-        for (std::map<int, std::vector<int>>::iterator it = matrix.begin(); it != matrix.end(); ++it) {
-            int userId = it->first;
-            std::vector<int>& products = it->second;
+CandidateProducts::CandidateProducts() {
+    this->candidateProductsMap = std::map<std::string, std::set<std::string>>();
+}
 
-            bool watched = std::find(products.begin(), products.end(), productId) != products.end();
-            
-            if (watched) {
-                int tempSimilarity = similarityMap[userId];
-                for (int i = 0; i < products.size(); ++i) {
-                    if (products[i] != productId) {
-                        bool targetUserWatched = std::find(targetUserProducts.begin(), targetUserProducts.end(), products[i]) != targetUserProducts.end();
-                        if (!targetUserWatched) {
-                            candidateProductsMap[products[i]] += tempSimilarity;
-                        }
-                    }
+void CandidateProducts::calculate(DataManager* dataManager, std::string targetProductId, std::string targetUserId) {
+    std::map<std::string, std::set<std::string>> productToUser = dataManager->getMapProductToUser();
+    std::map<std::string, std::set<std::string>> userToProducts = dataManager->getMapUserToProducts();
+
+    if (userToProducts.find(targetUserId) == userToProducts.end()) return;
+    if (productToUser.find(targetProductId) == productToUser.end()) return;
+
+    std::set<std::string> targetUserWatchedProducts = userToProducts[targetUserId];
+    std::set<std::string> usersWhoWatchedTargetProduct = productToUser[targetProductId];
+
+    for (std::string userId : usersWhoWatchedTargetProduct) {
+
+        if (userId == targetUserId) continue;
+
+        std::set<std::string> userProducts = userToProducts[userId];
+
+        for (std::string product : userProducts) {
+            if (product != targetProductId) {
+
+                if (targetUserWatchedProducts.find(product) == targetUserWatchedProducts.end()) {
+                    this->candidateProductsMap[product].insert(userId);
                 }
             }
         }
     }
+}
 
-    std::map<int, int>& CandidateProducts::getMap() {
-        return candidateProductsMap;
-    }
+std::map<std::string, std::set<std::string>> CandidateProducts::getMap() {
+    return this->candidateProductsMap;
+}

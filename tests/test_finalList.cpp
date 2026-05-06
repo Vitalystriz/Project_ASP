@@ -2,41 +2,59 @@
 #include "RecommendationList.h"
 #include "Similarity.h"
 #include "CandidateProducts.h"
+#include "DataManager.h"
 
 TEST(RecommendationAccuracy, StepG_FinalRankAndSorting) {
-    // Step 1: Build the matrix
-    std::map<int, std::vector<int>> matrix;
-    matrix[1] = {100, 101, 102, 103};
-    matrix[2] = {101, 102, 104, 105, 106};
-    matrix[3] = {100, 104, 105, 107, 108};
-    matrix[4] = {101, 105, 106, 107, 109, 110};
-    matrix[5] = {100, 102, 103, 105, 108, 111};
-    matrix[6] = {100, 103, 104, 110, 111, 112, 113};
-    matrix[7] = {102, 105, 106, 107, 108, 109, 110};
-    matrix[8] = {101, 104, 105, 106, 109, 111, 114};
-    matrix[9] = {100, 103, 105, 107, 112, 113, 115};
-    matrix[10] = {100, 102, 105, 106, 107, 109, 110, 116};
+    // Step 1: Build the data map
+    std::map<std::string, std::set<std::string>> userToProducts = {
+        {"1", {"100", "101", "102", "103"}},
+        {"2", {"101", "102", "104", "105", "106"}},
+        {"3", {"100", "104", "105", "107", "108"}},
+        {"4", {"101", "105", "106", "107", "109", "110"}},
+        {"5", {"100", "102", "103", "105", "108", "111"}},
+        {"6", {"100", "103", "104", "110", "111", "112", "113"}},
+        {"7", {"102", "105", "106", "107", "108", "109", "110"}},
+        {"8", {"101", "104", "105", "106", "109", "111", "114"}},
+        {"9", {"100", "103", "105", "107", "112", "113", "115"}},
+        {"10", {"100", "102", "105", "106", "107", "109", "110", "116"}}
+    };
 
-    // Step 2: Calculate similarity for user 1
-    Similarity sim;
-    sim.calculateSimilarity(matrix, 1);
-    std::map<int, int>& simMap = sim.getSimilarityMap();
-
-    // Step 3: Calculate candidate products (excluding products user 1 already watched)
-    CandidateProducts cp;
-    cp.calculate(matrix, 104, simMap, 1);
-    std::map<int, int>& relevance = cp.getMap();
-
-    // Step 4: Sort and get final recommendation list
-    RecommendationList recList(&sim, &cp);
-    int* results = recList.calculate();
-
-    // Expected order based on scores (descending) then by product ID (ascending) for ties
-    int expected[] = {105, 106, 111, 110, 112, 113, 107, 108, 109, 114};
-    
-    for(int i = 0; i < 10; ++i) {
-        EXPECT_EQ(results[i], expected[i]);
+    std::map<std::string, std::set<std::string>> productToUser;
+    for (auto pair : userToProducts) {
+        std::string user = pair.first;
+        std::set<std::string> products = pair.second;
+        for (std::string product : products) {
+            productToUser[product].insert(user);
+        }
     }
 
-    delete[] results;
+    DataManager dataManager;
+    dataManager.setMapUserToProducts(userToProducts);
+    dataManager.setMapProductToUsers(productToUser);
+
+    // Step 2: Calculate Similarity Map
+    Similarity sim;
+    sim.calculate(&dataManager, "1");
+    std::map<std::string, double> simMap = sim.getMap();
+
+    // Step 3: Calculate Candidate Products Mapping
+    CandidateProducts cp;
+    cp.calculate(&dataManager, "104", "1");
+    std::map<std::string, std::set<std::string>> cpMap = cp.getMap();
+
+    // Step 4: Sort and get final recommendation list passing by value
+    RecommendationList recList(simMap, cpMap);
+    std::vector<std::string> results = recList.calculate();
+
+    // Expected order based on algorithm criteria
+    std::vector<std::string> expected = {"105", "106", "111", "110", "112", "113", "107", "108", "109", "114"};
+
+    ASSERT_EQ(results.size(), expected.size());
+
+    // Loop through vector by value
+    int i = 0;
+    for (std::string result : results) {
+        EXPECT_EQ(result, expected[i]);
+        i++;
+    }
 }

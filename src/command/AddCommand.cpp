@@ -15,15 +15,15 @@ AddCommand::AddCommand(DataManager *dm) {
     this->dataManager = dm;
 }
 
-void AddCommand::execute(std::map<int, std::vector<int>> map) {
+void AddCommand::execute(std::map<std::string, std::vector<std::string>> map) {
     this->map = std::move(map);
 
     auto it = this->map.begin();
-    int userId = it->first;
-    std::vector<int> data = it->second;
+    std::string userId = it->first;
+    std::vector<std::string> data = it->second;
 
 
-    auto* append_user_action = new AppendUserAction(userId);
+    auto* append_user_action = new AppendUserAction(userId, data);
     append_user_action->execute(dataManager);
     delete append_user_action;
 
@@ -38,6 +38,6 @@ void AddCommand::execute(std::map<int, std::vector<int>> map) {
     std::cout<<"Adding user..."<<std::endl;
 }
 
-std::map<int, std::vector<int> > AddCommand::getArgs() {
+std::map<std::string, std::vector<std::string> > AddCommand::getArgs() {
     return this->map;
 }

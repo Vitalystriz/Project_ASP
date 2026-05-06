@@ -12,13 +12,16 @@
 #include <vector>
 #include <bits/stl_vector.h>
 
+#include "DataManager.h"
+
 class RecommendCommand: public ICommand {
 private:
-    std::map <int, std::vector<int>> map;
+    DataManager* dataManager;
+    std::map <std::string, std::vector<std::string>> map;
 public:
-    RecommendCommand();
-    void execute(std::map<int, std::vector<int>> map) override;
-    std::map<int, std::vector<int>> getArgs();
+    RecommendCommand(DataManager* dm);
+    void execute(std::map<std::string, std::vector<std::string>> map) override;
+    std::map<std::string, std::vector<std::string>> getArgs();
 };
 
 

@@ -9,9 +9,10 @@
 
 class AppendUserAction : public IDataAction {
 private:
-    int userId;
+    std::string userId;
+    std::vector<std::string> products;
   public:
-    explicit AppendUserAction(int userId);
+    explicit AppendUserAction(std::string userId, std::vector<std::string> products);
     void execute(DataManager* dataManager) override;
     void displayError() override;
 };

@@ -1,9 +1,14 @@
 add_executable(RecommendationApp
+        DataManager.h
         command/ICommand.h
         menu/IMenu.h
         run/App.h
         run/Initialization.h
         menu/ConsoleMenu.h
+
+        Similarity.h
+        CandidateProducts.h
+        RecommendationList.h
 
         command/DisplayErrorClass.h
         command/HelpCommand.h
@@ -22,7 +27,10 @@ add_executable(RecommendationApp
         command/RecommendCommand.cpp
 
         DataManager.cpp
-        DataManager.h
+
+        Similarity.cpp
+        CandidateProducts.cpp
+        RecommendationList.cpp
         persistence/dataAction/IDataAction.h
         persistence/dataAction/AppendUserAction.h
         persistence/dataAction/AppendUserAction.cpp
@@ -33,6 +41,8 @@ add_executable(RecommendationApp
         persistence/dataStorage/AppendUserStorage.h
         persistence/dataStorage/AppendProdcutStorage.cpp
         persistence/dataStorage/AppendProdcutStorage.h
+        run/LoadingData.cpp
+        run/LoadingData.h
 )
 
 # Tell the compiler to treat the current directory (src)

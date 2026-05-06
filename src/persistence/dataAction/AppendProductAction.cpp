@@ -8,21 +8,23 @@
 
 #include "DataManager.h"
 
-AppendProductAction::AppendProductAction(std::vector<int> products, int userId) {
+AppendProductAction::AppendProductAction(std::vector<std::string> products, std::string userId) {
     this->products = std::move(products);
-    this->userId = userId;
+    this->userId = std::move(userId);
 }
 void AppendProductAction::execute(DataManager *dataManager) {
     try {
-        std::map <int, std::set <int>> data = dataManager->getMapUserToProducts();
+        std::map <std::string, std::set <std::string>> data = dataManager->getMapUserToProducts();
 
+
+        // this part was already implemented in AppendUserAction it's a redudant but doesn't effect
         data[this->userId].insert(this->products.begin(), this->products.end());
         dataManager->setMapUserToProducts(data);
 
-        std::map <int, std::set <int>> data2 = dataManager->getMapProductToUser();
+        std::map <std::string, std::set <std::string>> data2 = dataManager->getMapProductToUser();
 
         //iterating all products and set user
-        for(int product : this->products) {
+        for(const std::string& product : this->products) {
             data2[product].insert(this->userId);
         }
         dataManager->setMapProductToUsers(data2);

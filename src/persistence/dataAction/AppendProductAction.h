@@ -11,10 +11,10 @@
 
 class AppendProductAction : public IDataAction {
 private:
-    std::vector<int> products;
-    int userId;
+    std::vector<std::string> products;
+    std::string userId;
 public:
-    AppendProductAction(std::vector<int> products, int userId);
+    AppendProductAction(std::vector<std::string> products, std::string userId);
     void execute(DataManager* dataManager) override;
     void displayError() override;
 };

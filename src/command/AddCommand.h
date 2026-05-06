@@ -12,11 +12,11 @@
 class AddCommand: public ICommand{
 private:
     DataManager* dataManager;
-    std::map <int, std::vector<int>> map;
+    std::map <std::string, std::vector<std::string>> map;
 public:
     explicit AddCommand(DataManager* dm);
-    std::map<int, std::vector<int>> getArgs();
-    void execute(std::map<int, std::vector<int>> map) override;
+    std::map<std::string, std::vector<std::string>> getArgs();
+    void execute(std::map<std::string, std::vector<std::string>> map) override;
 
 };
 

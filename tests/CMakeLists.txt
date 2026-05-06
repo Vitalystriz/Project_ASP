@@ -25,6 +25,7 @@ add_executable(runTests
         test_dataAction/test_appendUser.cpp
         test_addCommand.cpp
 
+
         test_calcSimilarity.cpp
         test_calcWeight.cpp
         test_finalList.cpp
@@ -49,6 +50,7 @@ add_executable(runTests
         ../src/persistence/dataStorage/AppendUserStorage.cpp
         ../src/persistence/dataStorage/AppendUserStorage.cpp
         ../src/persistence/dataStorage/AppendProdcutStorage.cpp
+        ../src/run/LoadingData.cpp
 )
 
 target_include_directories(runTests PRIVATE ../src)

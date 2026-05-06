@@ -1,26 +1,34 @@
 #include "Similarity.h"
-#include <algorithm>
 
-void Similarity::calculateSimilarity(std::map<int, std::vector<int>>& matrix, int user) {
-    std::vector<int>& userProducts = matrix[user];
+Similarity::Similarity() {
+    this->similarityMap = std::map<std::string, double>();
+}
 
-    //for all users that are not our target user- calculate the amount of shared products which
-    //will act as the similarity
-    for (auto it = matrix.begin(); it != matrix.end(); ++it) {
-        int otherId = it->first;
-        std::vector<int>& products = it->second;
-        if (otherId != user) {
-            int count = 0;
-            for (int i = 0; i < products.size(); ++i) {
-                if (std::find(userProducts.begin(), userProducts.end(), products[i]) != userProducts.end()) {
-                    count++;
-                }
+void Similarity::calculate(DataManager* dataManager, std::string targetUserId) {
+    std::map<std::string, std::set<std::string>> matrix = dataManager->getMapUserToProducts();
+
+    if (matrix.find(targetUserId)== matrix.end()) return;
+
+    std::set<std::string> targetUserProducts= matrix[targetUserId];
+    for (auto pair : matrix) {
+        std::string userId=pair.first;
+        std::set<std::string> products=pair.second;
+
+        if (userId== targetUserId) continue;
+
+        double commonProducts = 0.0;
+
+
+        for (std::string product : products) {
+            if (targetUserProducts.find(product) != targetUserProducts.end()) {
+                commonProducts += 1.0;
             }
-            similarityMap[otherId] = count;
         }
+
+        this->similarityMap[userId] = commonProducts;
     }
 }
 
-std::map<int, int>& Similarity::getSimilarityMap() {
-    return similarityMap;
+std::map<std::string, double> Similarity::getMap() {
+    return this->similarityMap;
 }

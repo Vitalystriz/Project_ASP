@@ -1,15 +1,18 @@
 #ifndef CANDIDATEPRODUCTS_H
 #define CANDIDATEPRODUCTS_H
 
+#include "DataManager.h"
+#include <string>
 #include <map>
-#include <vector>
+#include <set>
 
 class CandidateProducts {
 private:
-    std::map<int, int> candidateProductsMap;
+    std::map<std::string, std::set<std::string>> candidateProductsMap;
 public:
-    void calculate(std::map<int, std::vector<int>>& matrix, int productId, std::map<int, int>& simMap, int targetUserId);
-    std::map<int, int>& getMap();
+    CandidateProducts();
+    void calculate(DataManager* dataManager, std::string targetProductId, std::string targetUserId);
+    std::map<std::string, std::set<std::string>> getMap();
 };
 
 #endif //CANDIDATEPRODUCTS_H

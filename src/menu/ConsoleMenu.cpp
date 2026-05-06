@@ -12,7 +12,7 @@
 #include "ConsoleMenu.h"
 
     ConsoleMenu::ConsoleMenu() {
-        this->mapArgs = std::map<int, std::vector<int>>();
+        this->mapArgs = std::map<std::string, std::vector<std::string>>();
         printMenu();
     }
 
@@ -21,7 +21,7 @@
         help.execute();
     }
 
-std::string ConsoleMenu::nextCommand() { // -> int command
+std::string ConsoleMenu::nextCommand() { // -> std::string command
         std::string line;
 
         if (!std::getline(std::cin, line) || line.empty()) {
@@ -39,12 +39,12 @@ std::string ConsoleMenu::nextCommand() { // -> int command
         if (command == "help") return "help";
 
         if (command == "add") {
-            int uId;
-            std::vector<int> pId;
+            std::string uId;
+            std::vector<std::string> pId;
             if (ss >> uId) {
-                int temp_pId; // Temporary variable to hold the parsed ID
+                std::string temp_pId;
                 while(ss >> temp_pId) {
-                    pId.push_back(temp_pId); // Safely append to the vector
+                    pId.push_back(temp_pId);
                 }
                 mapArgs[uId] = pId;
             }
@@ -52,15 +52,16 @@ std::string ConsoleMenu::nextCommand() { // -> int command
         }
 
         if (command == "recommend") {
-            int uId;
-            int temp_pId; // Temporary variable
-            std::vector<int> pId;
+            std::string uId;
+            std::string temp_pId;
+            std::vector<std::string> pId;
             if (ss >> uId && ss >> temp_pId) {
-                pId.push_back(temp_pId); // Safely append to the vector
-                mapArgs[uId] = pId; // map{targetUId: targetPId}
+                pId.push_back(temp_pId);
+                mapArgs[uId] = pId;
             }
             return "recommend";
         }
+
 
         return "error";
     }
@@ -74,6 +75,6 @@ std::string ConsoleMenu::nextCommand() { // -> int command
         std::cout << "Goodbye" << std::endl;
     }
 
-    std::map<int, std::vector<int> > ConsoleMenu::getArgs() {
+    std::map<std::string, std::vector<std::string> > ConsoleMenu::getArgs() {
         return mapArgs;
     }
