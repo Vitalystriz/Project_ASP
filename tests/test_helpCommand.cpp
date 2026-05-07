@@ -23,9 +23,8 @@ TEST(HelpCommandTest, ExecutePrintsCorrectMenu) {
     std::string output = buffer.str();
 
 
-    EXPECT_TRUE(output.find("--- Recommendation System CLI ---") != std::string::npos);
-    EXPECT_TRUE(output.find("- help") != std::string::npos);
-    EXPECT_TRUE(output.find("- add <userId> <productId1> <productId2> ...") != std::string::npos);
-    EXPECT_TRUE(output.find("- recommend <userId> <productId>") != std::string::npos);
-    EXPECT_TRUE(output.find("- exit") != std::string::npos);
+
+    EXPECT_TRUE(output.find("add [userid] [productid1] [productid2] ...") != std::string::npos);
+    EXPECT_TRUE(output.find("recommend [userid] [productid]") != std::string::npos);
+    EXPECT_TRUE(output.find("help") != std::string::npos);
 }

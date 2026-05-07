@@ -34,13 +34,18 @@ void RecommendCommand::execute(std::map<std::string, std::vector<std::string>> m
     std::vector<std::string> finalRecommendations = recommendationList.calculate();
 
     if (finalRecommendations.empty()) {
-        std::cout << "No recommendations found(" << std::endl;
+        std::cout << "" << std::endl;
         return;
     }
-
-    for( const std::string& recommendation : finalRecommendations) {
-        std::cout << recommendation << std::endl;
+    int i = 0;
+    for (const std::string& recommendation : finalRecommendations) {
+        if (i != 0) {
+            std::cout << " ";
+        }
+        std::cout << recommendation;
+        i++;
     }
+    std::cout << std::endl;
 }
 
 std::map<std::string, std::vector<std::string>>  RecommendCommand::getArgs() {

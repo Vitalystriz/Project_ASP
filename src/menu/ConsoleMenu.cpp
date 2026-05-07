@@ -13,7 +13,7 @@
 
     ConsoleMenu::ConsoleMenu() {
         this->mapArgs = std::map<std::string, std::vector<std::string>>();
-        printMenu();
+        // printMenu();
     }
 
     void ConsoleMenu::printMenu() {
@@ -36,7 +36,14 @@ std::string ConsoleMenu::nextCommand() { // -> std::string command
 
         if (command == "exit") return "exit";
 
-        if (command == "help") return "help";
+        if (command == "help") {
+            std::string rubbish;
+            ss >> rubbish;
+            if(rubbish.empty()) {
+                return "help";
+            }
+            return "error";
+        }
 
         if (command == "add") {
             std::string uId;
@@ -47,6 +54,9 @@ std::string ConsoleMenu::nextCommand() { // -> std::string command
                     pId.push_back(temp_pId);
                 }
                 mapArgs[uId] = pId;
+            }
+            if (uId.empty() or pId.empty()) {
+                return "error";
             }
             return "add";
         }
@@ -59,6 +69,9 @@ std::string ConsoleMenu::nextCommand() { // -> std::string command
                 pId.push_back(temp_pId);
                 mapArgs[uId] = pId;
             }
+            if (uId.empty() or pId.empty()) {
+                return "error";
+            }
             return "recommend";
         }
 
@@ -67,12 +80,12 @@ std::string ConsoleMenu::nextCommand() { // -> std::string command
     }
 
     void ConsoleMenu::displayError() {
-        std::cout << "Sorry, an error occurred" << std::endl;
-        std::cout << "Please, try enter your command one more time" << std::endl;
+        // std::cout << "Sorry, an error occurred" << std::endl;
+        // std::cout << "Please, try enter your command one more time" << std::endl;
     }
 
     void ConsoleMenu::exitMessage() {
-        std::cout << "Goodbye" << std::endl;
+        // std::cout << "Goodbye" << std::endl;
     }
 
     std::map<std::string, std::vector<std::string> > ConsoleMenu::getArgs() {

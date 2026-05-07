@@ -8,13 +8,9 @@
         execute();
     }
     void HelpCommand::execute() {
-        std::cout << "--- Recommendation System CLI ---" << std::endl;
-        std::cout << "Available commands:" << std::endl;
-        std::cout << "- help" << std::endl;
-        std::cout << "- add <userId> <productId1> <productId2> ..." << std::endl;
-        std::cout << "- recommend <userId> <productId>" << std::endl;
-        std::cout << "- exit" << std::endl;
-        std::cout << "---------------------------------" << std::endl;
+        std::cout << "add [userid] [productid1] [productid2] ..." << std::endl;
+        std::cout << "recommend [userid] [productid]" << std::endl;
+        std::cout << "help" << std::endl;
     }
 
 
