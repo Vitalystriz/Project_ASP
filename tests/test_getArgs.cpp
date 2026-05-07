@@ -1,13 +1,7 @@
-//
-// Created by geras on 03.05.2026.
-//
+
 #include <gtest/gtest.h>
 #include "menu/ConsoleMenu.h"
 
-
-//
-// Created by vitaly on 27.04.2026.
-//
 
 
 #include <gtest/gtest.h>
@@ -43,7 +37,7 @@ TEST(ConsoleMenuGetArgsTest, AddCommandSingleProduct) {
     auto args = menu.getArgs();
 
     ASSERT_EQ(args.size(), 1);
-    EXPECT_EQ(args[10], std::vector<int>({500}));
+    EXPECT_EQ(args["10"], std::vector<std::string>({"500"}));
 }
 
 // 3. Test the 'add' command with multiple product IDs
@@ -55,7 +49,7 @@ TEST(ConsoleMenuGetArgsTest, AddCommandMultipleProducts) {
     auto args = menu.getArgs();
 
     ASSERT_EQ(args.size(), 1);
-    EXPECT_EQ(args[42], std::vector<int>({101, 102, 103, 104}));
+    EXPECT_EQ(args["42"], std::vector<std::string>({"101", "102", "103", "104"}));
 }
 
 // 4. Test the 'recommend' command
@@ -67,7 +61,7 @@ TEST(ConsoleMenuGetArgsTest, RecommendCommand) {
     auto args = menu.getArgs();
 
     ASSERT_EQ(args.size(), 1);
-    EXPECT_EQ(args[7], std::vector<int>({77}));
+    EXPECT_EQ(args["7"], std::vector<std::string >({"77"}));
 }
 
 // 5. Test that state is preserved correctly for multiple different users
@@ -77,15 +71,17 @@ TEST(ConsoleMenuGetArgsTest, MultipleCommandsDifferentUsers) {
     ConsoleMenu menu;
 
     menu.nextCommand(); // Consumes 'add 1 10'
+    auto args1 = menu.getArgs();
     menu.nextCommand(); // Consumes 'add 2 20 21'
+    auto args2 = menu.getArgs();
 
-    auto args = menu.getArgs();
+    ASSERT_EQ(args1.size(), 1);
+    ASSERT_EQ(args2.size(), 1);
 
-    ASSERT_EQ(args.size(), 2);
     // Verify user 1
-    EXPECT_EQ(args[1], std::vector<int>({10}));
+    EXPECT_EQ(args1["1"], std::vector<std::string>({"10"}));
     // Verify user 2
-    EXPECT_EQ(args[2], std::vector<int>({20, 21}));
+    EXPECT_EQ(args2["2"], std::vector<std::string>({"20", "21"}));
 }
 
 // 6. Test that running the same user twice overwrites their previous arguments
@@ -99,7 +95,7 @@ TEST(ConsoleMenuGetArgsTest, OverwriteExistingUserArgs) {
     auto args = menu.getArgs();
 
     ASSERT_EQ(args.size(), 1);
-    EXPECT_EQ(args[5], std::vector<int>({200, 300}));
+    EXPECT_EQ(args["5"], std::vector<std::string>({"200", "300"}));
 }
 
 // 7. Test that non-modifying commands (help, exit, invalid) do not alter the arguments

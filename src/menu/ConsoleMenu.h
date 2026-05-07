@@ -10,17 +10,17 @@
 
 class ConsoleMenu : public IMenu {
 private:
-    std::map<int, std::vector<int>> mapArgs;
+    std::map<std::string, std::vector<std::string>> mapArgs;
 
 public:
     ConsoleMenu();
 
-    static void printMenu();
+    void printMenu();
     std::string nextCommand() override;
     void displayError() override;
 
     void exitMessage() override;
+    std::map<std::string, std::vector<std::string>> getArgs() override;
 
-    std::map<int, std::vector<int>> getArgs() override;
 };
 #endif

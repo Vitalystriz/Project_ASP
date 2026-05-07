@@ -7,19 +7,21 @@
 
 #include <map>
 #include <vector>
+#include <set>
 
+#include <string> // Don't forget to include string!
 
 class DataManager {
 private:
-    std::map <int, std::vector <int>> userToProducts;
-    std::map <int, std::vector <int>> productToUser;
+    std::map<std::string, std::set<std::string>> userToProducts;
+    std::map<std::string, std::set<std::string>> productToUser;
 public:
-    static void setMapUserToProducts(std::map <int, std::vector <int>>);
-    static void setMapProductToUsers(std::map <int, std::vector <int>>);
-    static std::map <int, std::vector <int>> getMapUserToProducts();
-    static std::map <int, std::vector <int>> getMapProductToUser();
-
+    void setMapUserToProducts(std::map<std::string, std::set<std::string>>);
+    void setMapProductToUsers(std::map<std::string, std::set<std::string>>);
+    std::map<std::string, std::set<std::string>> getMapUserToProducts();
+    std::map<std::string, std::set<std::string>> getMapProductToUser();
 };
+
 
 
 

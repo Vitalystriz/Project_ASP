@@ -8,12 +8,12 @@
 
 TEST(InitializationTest, CreateCommandMapPopulatesCorrectly) {
     Initialization init;
-    auto commandMap = init.createCommandMap();
+    auto* data_manager = new DataManager();
+    auto commandMap = init.createCommandMap(data_manager);
 
-    // 1. Verify the exact number of commands registered
+
     EXPECT_EQ(commandMap.size(), 5);
 
-    // 2. Verify specific keys exist and are not null pointers
     EXPECT_TRUE(commandMap.find("exit") != commandMap.end());
     EXPECT_EQ(commandMap["exit"], nullptr);  // HelpCommand
     EXPECT_TRUE(commandMap.find("help") != commandMap.end());
@@ -27,9 +27,9 @@ TEST(InitializationTest, CreateCommandMapPopulatesCorrectly) {
 
     EXPECT_TRUE(commandMap.find("error") != commandMap.end());
     EXPECT_NE(commandMap["error"], nullptr);  // DisplayE
-    // 3. Clean up the memory allocated by new in createCommandMap
-    // to prevent memory leaks during testing
+
     for (auto const& [key, val] : commandMap) {
         delete val;
     }
+    delete data_manager;
 }

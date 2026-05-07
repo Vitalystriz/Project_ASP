@@ -4,7 +4,7 @@
 //
 #include "HelpCommand.h"
 
-    void HelpCommand::execute(std::map<int, std::vector<int>> map) {
+    void HelpCommand::execute(std::map<std::string, std::vector<std::string>> map) {
         execute();
     }
     void HelpCommand::execute() {

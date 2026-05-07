@@ -7,10 +7,12 @@
 
 
 #include <map>
+
+#include "DataManager.h"
 #include "command/ICommand.h"
 class Initialization {
   public:
-    std::map<std::string, ICommand*> createCommandMap();
+    std::map<std::string, ICommand*> createCommandMap(DataManager* dm);
     void appLaunch();
 };
 

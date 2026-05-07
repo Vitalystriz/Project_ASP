@@ -11,16 +11,17 @@
 #include "command/AddCommand.h"
 #include "command/DisplayErrorClass.h"
 #include "command/RecommendCommand.h"
+#include "LoadingData.h"
 
 
 
-std::map<std::string, ICommand*> Initialization::createCommandMap() {
-    std::map<std::string, ICommand*> commands; // fix magic numbers trouble
+std::map<std::string, ICommand*> Initialization::createCommandMap(DataManager* dm) {
+    std::map<std::string, ICommand*> commands; // fix magic numbers trouble - done
 
     commands["error"] = new DisplayErrorClass();
     commands["help"] = new HelpCommand();
-    commands["add"] = new AddCommand();
-    commands["recommend"] = new RecommendCommand();
+    commands["add"] = new AddCommand(dm);
+    commands["recommend"] = new RecommendCommand(dm);
     commands["exit"] = nullptr;
 
     return commands;
@@ -29,8 +30,13 @@ std::map<std::string, ICommand*> Initialization::createCommandMap() {
 void Initialization::appLaunch() {
 
     IMenu* menu = new ConsoleMenu();
+    auto* dataManager = new DataManager();
 
-    std::map<std::string, ICommand*> commands = createCommandMap();
+    LoadingData loadingData;
+    loadingData.load(dataManager);
+
+
+    std::map<std::string, ICommand*> commands = createCommandMap(dataManager);
 
     App app(menu, commands);
 
@@ -42,4 +48,5 @@ void Initialization::appLaunch() {
         delete val;
     }
     delete menu;
+    delete dataManager;
 }

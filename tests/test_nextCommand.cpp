@@ -39,7 +39,7 @@ TEST(ConsoleMenuTest, AddCommandWithValidArgs) {
 
     auto args = menu.getArgs();
     ASSERT_EQ(args.size(), 1);
-    EXPECT_EQ(args[1], std::vector<int>({2, 3, 4}));
+    EXPECT_EQ(args["1"], std::vector<std::string>({"2", "3", "4"}));
 }
 
 TEST(ConsoleMenuTest, AddCommandWithNoArgs) {
@@ -58,7 +58,7 @@ TEST(ConsoleMenuTest, RecommendCommandWithValidArgs) {
 
     auto args = menu.getArgs();
     ASSERT_EQ(args.size(), 1);
-    EXPECT_EQ(args[1], std::vector<int>({2}));
+    EXPECT_EQ(args["1"], std::vector<std::string>({"2"}));
 }
 
 TEST(ConsoleMenuTest, RecommendCommandWithNoArgs) {

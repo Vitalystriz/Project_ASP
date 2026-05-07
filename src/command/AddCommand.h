@@ -7,13 +7,16 @@
 #include <map>
 #include <vector>
 #include "ICommand.h"
+#include "DataManager.h"
+
 class AddCommand: public ICommand{
-    private:
-      std::map <int, std::vector<int>> map;
-    public:
-      AddCommand();
-      std::map<int, std::vector<int>> getArgs();
-      void execute(std::map<int, std::vector<int>> map) override;
+private:
+    DataManager* dataManager;
+    std::map <std::string, std::vector<std::string>> map;
+public:
+    explicit AddCommand(DataManager* dm);
+    std::map<std::string, std::vector<std::string>> getArgs();
+    void execute(std::map<std::string, std::vector<std::string>> map) override;
 
 };
 
