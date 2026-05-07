@@ -1,8 +1,8 @@
 #include <gtest/gtest.h>
-#include "CandidateProducts.h"
+#include "algorithm/Similarity.h"
 #include "DataManager.h"
 
-TEST(RecommendationAccuracy, StepB_CandidateProductsWeight) {
+TEST(RecommendationAccuracy, StepA_UserSimilarity) {
     std::map<std::string, std::set<std::string>> userToProducts = {
         {"1", {"100", "101", "102", "103"}},
         {"2", {"101", "102", "104", "105", "106"}},
@@ -16,33 +16,21 @@ TEST(RecommendationAccuracy, StepB_CandidateProductsWeight) {
         {"10", {"100", "102", "105", "106", "107", "109", "110", "116"}}
     };
 
-    // Calculate productToUser map dynamically
-    std::map<std::string, std::set<std::string>> productToUser;
-    for (auto pair : userToProducts) {
-        std::string user = pair.first;
-        std::set<std::string> products = pair.second;
-        for (std::string product : products) {
-            productToUser[product].insert(user);
-        }
-    }
-
     DataManager dataManager;
     dataManager.setMapUserToProducts(userToProducts);
-    dataManager.setMapProductToUsers(productToUser);
 
-    CandidateProducts cp;
-    cp.calculate(&dataManager, "104", "1");
-    std::map<std::string, std::set<std::string>> cpMap = cp.getMap();
 
-    // Verify mapping for product "105"
-    // Users who watched 104 and 105 (excluding target user 1): 2, 3, 8
-    EXPECT_TRUE(cpMap.find("105") != cpMap.end());
-    std::set<std::string> expectedUsersFor105 = {"2", "3", "8"};
-    EXPECT_EQ(cpMap["105"], expectedUsersFor105);
+    Similarity sim;
+    sim.calculate(&dataManager, "1");
+    std::map<std::string, double> scores = sim.getMap();
 
-    // Verify mapping for product "106"
-    // Users who watched 104 and 106 (excluding target user 1): 2, 8
-    EXPECT_TRUE(cpMap.find("106") != cpMap.end());
-    std::set<std::string> expectedUsersFor106 = {"2", "8"};
-    EXPECT_EQ(cpMap["106"], expectedUsersFor106);
+    EXPECT_EQ(scores["2"], 2.0);
+    EXPECT_EQ(scores["3"], 1.0);
+    EXPECT_EQ(scores["4"], 1.0);
+    EXPECT_EQ(scores["5"], 3.0);
+    EXPECT_EQ(scores["6"], 2.0);
+    EXPECT_EQ(scores["7"], 1.0);
+    EXPECT_EQ(scores["8"], 1.0);
+    EXPECT_EQ(scores["9"], 2.0);
+    EXPECT_EQ(scores["10"], 2.0);
 }

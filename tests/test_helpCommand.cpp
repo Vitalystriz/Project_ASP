@@ -1,7 +1,4 @@
-//
-// Created by geras on 28.04.2026.
-//
-// tests/test_HelpCommand.cpp
+
 
 #include <gtest/gtest.h>
 #include "command/HelpCommand.h"

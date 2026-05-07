@@ -3,9 +3,9 @@
 //
 
 #include "RecommendCommand.h"
-#include "Similarity.h"
-#include "CandidateProducts.h"
-#include "RecommendationList.h"
+#include "algorithm/Similarity.h"
+#include "algorithm/CandidateProducts.h"
+#include "algorithm/RecommendationList.h"
 #include "DataManager.h"
 #include <utility>
 #include <vector>

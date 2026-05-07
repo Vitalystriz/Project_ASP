@@ -1,6 +1,4 @@
-//
-// Created by geras on 05.05.2026.
-//
+
 
 #ifndef APPENDUSERSTORAGE_H
 #define APPENDUSERSTORAGE_H

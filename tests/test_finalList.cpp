@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
-#include "RecommendationList.h"
-#include "Similarity.h"
-#include "CandidateProducts.h"
+#include "algorithm/Similarity.h"
+#include "algorithm/CandidateProducts.h"
+#include "algorithm/RecommendationList.h"
 #include "DataManager.h"
 
 TEST(RecommendationAccuracy, StepG_FinalRankAndSorting) {

@@ -1,6 +1,4 @@
-//
-// Created by vitaly on 04.05.2026.
-//
+
 
 #ifndef APPENDUSERACTION_H
 #define APPENDUSERACTION_H

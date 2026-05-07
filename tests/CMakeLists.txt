@@ -41,15 +41,16 @@ add_executable(runTests
         ../src/command/AddCommand.cpp
         ../src/command/RecommendCommand.cpp
 
-        ../src/Similarity.cpp
-        ../src/CandidateProducts.cpp
-        ../src/RecommendationList.cpp
+
+        ../src/algorithm/CandidateProducts.cpp
+        ../src/algorithm/RecommendationList.cpp
+        ../src/algorithm/Similarity.cpp
+
         ../src/DataManager.cpp
         ../src/persistence/dataAction/AppendUserAction.cpp
         ../src/persistence/dataAction/AppendProductAction.cpp
         ../src/persistence/dataStorage/AppendUserStorage.cpp
         ../src/persistence/dataStorage/AppendUserStorage.cpp
-        ../src/persistence/dataStorage/AppendProdcutStorage.cpp
         ../src/run/LoadingData.cpp
 )
 

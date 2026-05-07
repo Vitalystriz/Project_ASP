@@ -9,8 +9,6 @@ void LoadingData::load(DataManager* dataManager) {
 
     dataManager->setMapUserToProducts(userToProducts);
     dataManager->setMapProductToUsers(productToUser);
-
-    std::cout << "Data loaded successfully!" << std::endl;
 }
 
 std::map<std::string, std::set<std::string>> LoadingData::parseFile(const std::string& filepath) {

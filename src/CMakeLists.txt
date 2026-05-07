@@ -6,9 +6,10 @@ add_executable(RecommendationApp
         run/Initialization.h
         menu/ConsoleMenu.h
 
-        Similarity.h
-        CandidateProducts.h
-        RecommendationList.h
+        algorithm/Similarity.h
+        algorithm/CandidateProducts.h
+        algorithm/RecommendationList.h
+
 
         command/DisplayErrorClass.h
         command/HelpCommand.h
@@ -28,9 +29,7 @@ add_executable(RecommendationApp
 
         DataManager.cpp
 
-        Similarity.cpp
-        CandidateProducts.cpp
-        RecommendationList.cpp
+
         persistence/dataAction/IDataAction.h
         persistence/dataAction/AppendUserAction.h
         persistence/dataAction/AppendUserAction.cpp
@@ -39,12 +38,12 @@ add_executable(RecommendationApp
         persistence/dataStorage/IDataStorage.h
         persistence/dataStorage/AppendUserStorage.cpp
         persistence/dataStorage/AppendUserStorage.h
-        persistence/dataStorage/AppendProdcutStorage.cpp
-        persistence/dataStorage/AppendProdcutStorage.h
         run/LoadingData.cpp
         run/LoadingData.h
+        algorithm/CandidateProducts.cpp
+        algorithm/Similarity.cpp
+        algorithm/RecommendationList.cpp
 )
 
-# Tell the compiler to treat the current directory (src)
-# as the base for all #include directives
+
 target_include_directories(RecommendationApp PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})

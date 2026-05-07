@@ -1,6 +1,4 @@
-//
-// Created by vitaly on 04.05.2026.
-//
+
 
 #ifndef IDATAACTION_H
 #define IDATAACTION_H

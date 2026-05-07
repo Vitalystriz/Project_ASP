@@ -1,13 +1,7 @@
-//
-// Created by geras on 03.05.2026.
-//
+
 #include <gtest/gtest.h>
 #include "menu/ConsoleMenu.h"
 
-
-//
-// Created by vitaly on 27.04.2026.
-//
 
 
 #include <gtest/gtest.h>
